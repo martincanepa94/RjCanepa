@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+// Lo primero que va en el archivo App.js son las importaciones de mis componentes
+// Luego los incluimos en el return como etiqueta.
+// Importamos tambien la hoja de estilos css que creamos.
+
+import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
+import { NavBar } from "./components/NavBar/NavBar";
+import { Boton } from "./components/Boton/Boton";
+import "./style.css"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NavBar />
+      <ItemListContainer greeting="Bienvenidos a Bodega de Vinos Malvin"/>
+    </>
   );
 }
 
