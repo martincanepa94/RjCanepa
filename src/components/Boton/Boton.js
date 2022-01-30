@@ -1,6 +1,9 @@
-export const Boton = ( {text, click, children}) => {
+import { Button } from "react-bootstrap"
+import './Boton.scss'
+
+export const Boton = ( {children, click} ) => {
 
     return (
-        <button className="my-boton" onClick={click}>{text}</button>
+        <Button variant="success" size="lg" onClick={click}>{children}</Button>
     )
 }

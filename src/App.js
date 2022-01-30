@@ -5,6 +5,7 @@
 import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import { NavBar } from "./components/NavBar/NavBar";
 import { Boton } from "./components/Boton/Boton";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css"
 
 function App() {

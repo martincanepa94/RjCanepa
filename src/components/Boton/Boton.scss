@@ -1,0 +1,13 @@
+.my-boton {
+    color: white;
+    background-color: pink;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 700;
+
+    &:hover {
+        background-color: red;
+    }
+}
+

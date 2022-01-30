@@ -8,20 +8,48 @@
 
 import "./ItemListContainer.css"
 import { Boton } from "../Boton/Boton"
+import { Contenedor } from "../Contenedor/Contenedor"
+import { Clicker } from "../Clicker/Clicker"
+import {useState, useEffect} from 'react'
+import { pedirDatos } from "../../helpers/pedirDatos"
+import { Producto } from "../Producto/Producto"
+import { stock } from "../../data/stock"
+import { Item } from "../Item/Item"
+import { ItemList } from "../ItemList/ItemList"
 
-export const ItemListContainer = ( {greeting} ) => {
 
-    const clickear = () => {
-        console.log('Boton clickeado')
-    }
+export const ItemListContainer = () => {
+
+    const [productos, setProductos] = useState([])
+    const [loading, setLoading] = useState(false)
+
+
+useEffect( () => {
+    setLoading(true)
+
+    pedirDatos()
+        .then( (res) => {
+            setProductos(res)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
+        .finally(() => {
+            setLoading(false)
+        })
+
+
+}, [])
 
     return (
-    <section className="item-list-container">
-        <h2>{greeting}</h2>
-        <hr />
-
-    </section>
-
+            <>
+            {
+                loading ? 
+                <h3>Loading...</h3> 
+                : <ItemList productos={productos}/>
+            }
+                
+            </>
 
     )
 }
