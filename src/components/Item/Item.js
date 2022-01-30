@@ -9,9 +9,9 @@ export const Item = ( {nombre, precio, img, desc} ) => {
   <Card.Body>
     <Card.Title>{nombre}</Card.Title>
     <Card.Text>
-      {desc}
+      Descripcion: {desc}
     </Card.Text>
-        Precio: $ {precio}
+        Precio: $ {precio}<hr />
     <Button variant="warning">Comprar</Button>
   </Card.Body>
 </Card>

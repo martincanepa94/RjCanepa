@@ -17,6 +17,7 @@ export const ItemList = ( {productos} ) => {
 
     return (
         <Contenedor>
+            <hr />
             <h2>Productos:</h2>
             <hr/>
             <div className="row">
@@ -24,17 +25,6 @@ export const ItemList = ( {productos} ) => {
             { stock.map( (el, i) => <Item  key={el.id} {...el}/>)}
     
             </div>
-            <hr />
-            
-    
-    
-            <Boton click={mostrar}>Mostrar clicker</Boton>
-    
-            <hr/>
-            { clicker === true? <Clicker/> : null}
     
         </Contenedor>
-
-    )
-
-    }
+    ) }

@@ -1,20 +1,31 @@
 import "./NavBar.css"
 import { CartWidget } from "../CartWidget/CartWidget"
+import { Card, Button, Navbar, Nav, Container } from "react-bootstrap"
 
 export const NavBar = () => {
 
     return (
-        <header className="header">
-            <h1>LOGO</h1>
+        <>
+  <Navbar bg="primary" variant="dark">
+    <Container>
+    <Navbar.Brand href="#home">Bienvenidos a Viñedos Malvin!</Navbar.Brand>
+    <Nav className="me-auto">
+      <Nav.Link href="#home">Inicio</Nav.Link>
+      <Nav.Link href="#features">Productos</Nav.Link>
+      <Nav.Link href="#pricing">Viñedos y Bodega</Nav.Link>
+      
+    </Nav>
+    <CartWidget/>
+    </Container>
+  </Navbar>
+ 
 
-            <nav className="header-nav">
-                <p className="header-link">Vino Blanco</p>
-                <p className="header-link">Vino Rosado</p>   
-                <p className="header-link">Tinto</p>
-                <p> <CartWidget/> </p>
+        
+        </>
+        
+               
+            
 
-            </nav>
-
-        </header>
+        
     )
 }

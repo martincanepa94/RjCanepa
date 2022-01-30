@@ -16,6 +16,7 @@ import { Producto } from "../Producto/Producto"
 import { stock } from "../../data/stock"
 import { Item } from "../Item/Item"
 import { ItemList } from "../ItemList/ItemList"
+import { Loader } from "../Loader/Loader"
 
 
 export const ItemListContainer = () => {
@@ -45,7 +46,7 @@ useEffect( () => {
             <>
             {
                 loading ? 
-                <h3>Loading...</h3> 
+                <Loader />
                 : <ItemList productos={productos}/>
             }
                 
