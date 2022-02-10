@@ -6,7 +6,8 @@ export const stock = [
         desc: 'Vino Mendel Malbec 750 Ml',
         precio: 1300,
         img: 'https://iberpark.com/website/image/product.template/37627/image',
-        stock: 50
+        stock: 50,
+        categoria: 'estandar'
     },
 
     {
@@ -15,7 +16,9 @@ export const stock = [
         desc: 'Vino Artesana Zinfandel 750 Ml',
         precio: 469,
         img: 'https://iberpark.com/website/image/product.template/37217/image',
-        stock: 50
+        stock: 50,
+        categoria: 'estandar'
+
     },
 
     {
@@ -24,6 +27,7 @@ export const stock = [
         desc: 'Vino Revancha Malbec 750 Ml',
         precio: 770,
         img: 'https://iberpark.com/website/image/product.template/35374/image',
-        stock: 50
+        stock: 50,
+        categoria: 'vip'
     },
 ]

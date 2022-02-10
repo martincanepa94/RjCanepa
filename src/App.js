@@ -8,12 +8,29 @@ import { Boton } from "./components/Boton/Boton";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css"
 
+import { Contacto } from "./components/NavBar/Contacto";
+import { Nosotros } from "./components/NavBar/Nosotros";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
+
 function App() {
+  
   return (
-    <>
+    <BrowserRouter>
+
       <NavBar />
-      <ItemListContainer greeting="Bienvenidos a Bodega de Vinos Malvin"/>
-    </>
+
+      <Routes>
+        <Route path="/" element={ <ItemListContainer/> } />
+        <Route path='/productos/:catId' element={ <ItemListContainer/> } />
+        <Route path='/detail/:itemId' element={ <ItemDetailContainer/> } />
+        <Route path='/contacto' element={ <Contacto/> } />
+        <Route path='/nosotros' element={ <Nosotros/> } />
+
+        <Route path='*' element={ <Navigate to='/'/> } />
+      </Routes>
+
+    </BrowserRouter>
   );
 }
 

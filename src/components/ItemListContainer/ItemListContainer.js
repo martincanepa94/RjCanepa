@@ -17,6 +17,7 @@ import { stock } from "../../data/stock"
 import { Item } from "../Item/Item"
 import { ItemList } from "../ItemList/ItemList"
 import { Loader } from "../Loader/Loader"
+import { useParams } from "react-router-dom"
 
 
 export const ItemListContainer = () => {
@@ -24,23 +25,36 @@ export const ItemListContainer = () => {
     const [productos, setProductos] = useState([])
     const [loading, setLoading] = useState(false)
 
+    const { catId } = useParams()
 
-useEffect( () => {
-    setLoading(true)
-
-    pedirDatos()
-        .then( (res) => {
-            setProductos(res)
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-        .finally(() => {
-            setLoading(false)
-        })
+    console.log(catId)
+    console.log(productos)
 
 
-}, [])
+    useEffect( () => {
+        setLoading(true)
+
+        pedirDatos()
+            .then( (res) => {
+                if (catId) {
+
+                    setProductos(res.filter((el) => el.categoria === catId ))
+
+                    
+                } else {
+                    setProductos(res)
+                }
+                
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+            .finally(() => {
+                setLoading(false)
+            })
+
+
+    }, [catId])
 
     return (
             <>

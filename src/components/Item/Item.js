@@ -1,6 +1,7 @@
 import { Card, Button } from "react-bootstrap"
+import { Link } from 'react-router-dom'
 
-export const Item = ( {nombre, precio, img, desc} ) => {
+export const Item = ( {id, nombre, precio, img, desc} ) => {
 
     return(
         <>
@@ -12,7 +13,10 @@ export const Item = ( {nombre, precio, img, desc} ) => {
       Descripcion: {desc}
     </Card.Text>
         Precio: $ {precio}<hr />
-    <Button variant="warning">Comprar</Button>
+    <Link to={`/detail/${id}`}>
+      
+    </Link>
+    <Button variant="warning" as={Link} to={`/detail/${id}`}>Ver mas</Button>
   </Card.Body>
 </Card>
         </>
