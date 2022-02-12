@@ -7,6 +7,7 @@ import { NavBar } from "./components/NavBar/NavBar";
 import { Boton } from "./components/Boton/Boton";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css"
+import { Form } from "./components/Form/Form";
 
 import { Contacto } from "./components/NavBar/Contacto";
 import { Nosotros } from "./components/NavBar/Nosotros";
@@ -16,10 +17,14 @@ import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetail
 function App() {
   
   return (
+
+
+    
     <BrowserRouter>
 
       <NavBar />
 
+      
       <Routes>
         <Route path="/" element={ <ItemListContainer/> } />
         <Route path='/productos/:catId' element={ <ItemListContainer/> } />

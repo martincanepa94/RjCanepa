@@ -26,6 +26,20 @@ export const ItemDetailContainer = () => {
 
     }, [])
 
+    useEffect(()=> {
+        const clickear = () => {
+            console.log('click')
+        }
+
+
+        window.addEventListener('click', clickear)
+
+        return () => {
+           window.removeEventListener('click', clickear)
+        }
+
+    }, [])
+
     return (
     <div>
         {

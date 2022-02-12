@@ -22,7 +22,7 @@ export const ItemList = ( {productos} ) => {
             <hr/>
             <div className="row">
     
-            { stock.map( (el, i) => <Item  key={el.id} {...el}/>)}
+            { productos.map( (el, i) => <Item  key={el.id} {...el}/>)}
     
             </div>
     
