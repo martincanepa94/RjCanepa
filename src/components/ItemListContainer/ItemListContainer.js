@@ -10,7 +10,7 @@ import "./ItemListContainer.css"
 import { Boton } from "../Boton/Boton"
 import { Contenedor } from "../Contenedor/Contenedor"
 import { Clicker } from "../Clicker/Clicker"
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import { pedirDatos } from "../../helpers/pedirDatos"
 import { Producto } from "../Producto/Producto"
 import { stock } from "../../data/stock"

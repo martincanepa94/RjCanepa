@@ -1,21 +1,28 @@
 
 import { ItemCount } from "../ItemCount/ItemCount"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { CartContext } from "../../context/CartContext"
+import { Link } from "react-router-dom"
 
 export const ItemDetail = ( { id, nombre, img, desc, stock, precio, categoria } ) => {
-
+    
     const [cantidad, setCantidad] = useState(0)
+
+    const { cart, agregarAlCarrito, isInCart } = useContext(CartContext)
+
+    console.log(cart)
 
     const handleAgregar = () => {
         if (cantidad === 0) return
         // con el return ahi no se ejecuta lo que sigue en la funcion.
 
-
-        const addItem = {
-            id, nombre, precio, stock, cantidad
+        if (!isInCart(id)) {
+            const addItem = {
+                id, nombre, precio, stock, cantidad
+            }
+    
+            agregarAlCarrito(addItem)
         }
-
-        console.log(addItem)
     }
 
     return (
@@ -25,6 +32,16 @@ export const ItemDetail = ( { id, nombre, img, desc, stock, precio, categoria } 
             <p>{desc}</p>
             <h5>Precio $: {precio}</h5>
             
+            {
+                isInCart(id)
+                ? 
+                <Link to="/cart" className="btn btn-succes my-3">
+                    Terminar mi compra
+                </Link>
+                :
+                
+
+                <>
             <ItemCount 
             max={stock} 
             counter={cantidad} 
@@ -39,6 +56,12 @@ export const ItemDetail = ( { id, nombre, img, desc, stock, precio, categoria } 
             >
                 Agregar al carrito
                 </button>
+
+            </>
+                
+            }
+
+            
         
 
         </div>

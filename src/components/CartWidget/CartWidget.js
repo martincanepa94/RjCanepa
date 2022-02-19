@@ -1,8 +1,18 @@
+import { useContext } from 'react'
+import { BsFillCartFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
+import '../CartWidget/CartWidget.scss'
+import { CartContext } from '../../context/CartContext'
+
+
 export const CartWidget = () => {
+
+        const { cantidadCart } = useContext(CartContext)
+
     return (
-            <>
-            <img src="https://cdn-icons-png.flaticon.com/512/102/102657.png" 
-            width="60" height="60"></img>
-            </>
+                    <Link to="/cart" className='cart-widget'>
+                    <BsFillCartFill/>
+                    <span>{cantidadCart()}</span>
+                    </Link>
             )
     }
