@@ -6,9 +6,10 @@ export const Cart = () => {
 
     const { cart, totalCart, vaciarCart, eliminarItem} = useContext(CartContext)
 
-   
 
     return (
+
+        
         <div className="container my-4">
             <h2>Tu compra</h2>
             <hr/>

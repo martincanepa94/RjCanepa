@@ -7,7 +7,8 @@ export const stock = [
         precio: 1300,
         img: 'https://iberpark.com/website/image/product.template/37627/image',
         stock: 10,
-        categoria: 'estandar'
+        categoria: 'estandar',
+        oferta: true
     },
 
     {
@@ -17,7 +18,8 @@ export const stock = [
         precio: 469,
         img: 'https://iberpark.com/website/image/product.template/37217/image',
         stock: 10,
-        categoria: 'estandar'
+        categoria: 'estandar',
+        oferta: false
 
     },
 
@@ -28,6 +30,7 @@ export const stock = [
         precio: 770,
         img: 'https://iberpark.com/website/image/product.template/35374/image',
         stock: 10,
-        categoria: 'vip'
+        categoria: 'vip',
+        oferta: true
     },
 ]

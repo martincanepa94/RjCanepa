@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
+import { configBtns } from "./configBtns"
 
 export const ItemCount = ({max, min = 0, counter, setCounter}) => {
-
+    
     const handleSumar = () => {
   
         counter < max && setCounter(counter+1)
@@ -12,13 +13,17 @@ export const ItemCount = ({max, min = 0, counter, setCounter}) => {
        // Esto es un ternario de dos partes. si pasa tal cosa, entonces esto. mas nada.
    }
 
-    
+   const {configRestar, configSumar} = configBtns(counter, max, min, handleRestar, handleSumar)
 
     return (
         <div >
-            <button className="btn btn-outline-primary" onClick={handleRestar}>-</button>
+            <button {...configRestar}>
+                -
+            </button>
             <span className="mx-3">{counter}</span>
-            <button className="btn btn-outline-primary" onClick={handleSumar}> +</button>
+            <button {...configSumar}> 
+                +
+            </button>
         </div>
 
 
