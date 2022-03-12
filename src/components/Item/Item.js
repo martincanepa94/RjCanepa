@@ -18,7 +18,6 @@ export const Item = ( {id, nombre, precio, img, desc, oferta} ) => {
     { oferta &&
     <Card.Title>25% OFF</Card.Title>
     }
-    
         Precio: $ {precioFinal}<hr />
     <Link to={`/detail/${id}`}>
     </Link>

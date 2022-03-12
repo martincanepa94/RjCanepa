@@ -1,11 +1,6 @@
 import { Contenedor } from "../Contenedor/Contenedor";
 import { Item } from "../Item/Item";
-import { Boton } from "../Boton/Boton"
-import { Clicker } from "../Clicker/Clicker"
 import {useState, useEffect} from 'react'
-import { pedirDatos } from "../../helpers/pedirDatos"
-import { Producto } from "../Producto/Producto"
-import { stock } from "../../data/stock"
 
 export const ItemList = ( {productos} ) => {
 

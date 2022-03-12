@@ -11,6 +11,7 @@ import { Form } from "./components/Form/Form";
 
 import { Contacto } from "./components/NavBar/Contacto";
 import { Nosotros } from "./components/NavBar/Nosotros";
+import { Checkout } from "./components/checkout/Checkout";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartContext, CartProvider } from './context/CartContext'
@@ -33,6 +34,7 @@ function App() {
         <Route path='/contacto' element={ <Contacto/> } />
         <Route path='/nosotros' element={ <Nosotros/> } />
         <Route path='/cart' element={ <Cart/> } />
+        <Route path='/checkout' element={ <Checkout/> } />
 
         <Route path='*' element={ <Navigate to='/'/> } />
       </Routes>

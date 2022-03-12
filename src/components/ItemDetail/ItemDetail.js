@@ -10,8 +10,6 @@ export const ItemDetail = ( { id, nombre, img, desc, stock, precio, categoria } 
 
     const { cart, agregarAlCarrito, isInCart } = useContext(CartContext)
 
-    console.log(cart)
-
     const handleAgregar = () => {
         if (cantidad === 0) return
         // con el return ahi no se ejecuta lo que sigue en la funcion.

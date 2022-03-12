@@ -8,22 +8,17 @@ export const Clicker = () => {
     const sumarClick = () => {
         setClicks( clicks + 1)
     }
-
-
     useEffect( ()=> {
         const aumentar = () => {
             console.log('click')
         }
-        
         window.addEventListener('click', aumentar)
 
         return () => {
             window.removeEventListener('click', aumentar)
         }
-        
     }, []
     )
-
     return (
         <>
             <Boton click={sumarClick}>Click me</Boton>
